@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explode this balloon</title>
+</head>
+
+<body>
+  <div
+    class="balloon"
+    id="balloon"
+    style="width: 200px; height: 200px; background-color: red;"
+  ></div>
+  <p id="demo"></p>
+</body>
+
+<style>
+  .balloon {
+    border-radius: 100%;
+    background-color: red;
+  }
+</style>
+
+<script>
+  balloon = document.querySelector('.balloon')
+
+  balloon.addEventListener("click", () => {
+    currentSize = parseInt(balloon.style.width.replace('px', ''))
+    if (currentSize + 10 > 420) {
+      balloon.style.width = '200px'
+      balloon.style.height = '200px'
+    } else {
+      balloon.style.width = `${currentSize + 10}px`
+      balloon.style.height = `${currentSize + 10}px`
+    }
+
+    currentColor = balloon.style['background-color']
+    if (currentColor == 'red') balloon.style['background-color'] = 'green'
+    if (currentColor == 'green') balloon.style['background-color'] = 'blue'
+    if (currentColor == 'blue') balloon.style['background-color'] = 'red'
+
+    debugBalloon()
+  })
+
+  balloon.addEventListener("mouseleave", () => {
+    currentSize = parseInt(balloon.style.width.replace('px', ''))
+    if (currentSize - 5 >= 200) {
+      balloon.style.width = `${currentSize - 5}px`
+      balloon.style.height = `${currentSize - 5}px`
+    }
+
+    currentColor = balloon.style['background-color']
+    if (currentColor == 'red') balloon.style['background-color'] = 'blue'
+    if (currentColor == 'blue') balloon.style['background-color'] = 'green'
+    if (currentColor == 'green') balloon.style['background-color'] = 'red'
+
+    debugBalloon()
+  })
+
+  function debugBalloon() {
+    console.log(balloon.style.width + '\n' + balloon.style['background-color'])
+  }
+</script>
+
+</html>
+
