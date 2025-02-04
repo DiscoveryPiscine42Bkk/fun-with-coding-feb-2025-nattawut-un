@@ -1,0 +1,22 @@
+body {
+  margin: 0
+}
+
+table {
+  border-collapse: collapse;
+  width: 100vw;
+  height: 100vh
+}
+
+td {
+  font-size: xx-large;
+  width: 50%
+}
+
+td.left {
+  background-color: lightskyblue;
+}
+
+td.right {
+  background-color: lightgreen;
+}
