@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It's over 9000</title>
+</head>
+
+<style>
+  * {
+    font-size: xx-large;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<body>
+  <div style="margin: 32px;">
+    <form onsubmit="calculate(event)">
+
+      <input type="text" name="left-number" id="left-number">
+
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+
+      <input type="text" name="right-number" id="right-number">
+
+      <input type="submit" value="Try me!">
+
+    </form>
+  </div>
+</body>
+
+<script>
+  setInterval(function() {
+      alert('Please, use me...');
+    }, 30000);
+
+  function calculate(event) {
+    event.preventDefault()
+
+    const leftNumber = document.getElementById('left-number').value
+    const operator = document.getElementById('operator').value
+    const rightNumber = document.getElementById('right-number').value
+
+    var result
+    if (
+      leftNumber < 0 || rightNumber < 0 ||
+      !/^\d+$/.test(leftNumber) || !/^\d+$/.test(rightNumber)
+    ) {
+      result = 'Error :('
+    } else if (operator == '+') {
+      result = parseFloat(leftNumber) + parseFloat(rightNumber)
+    } else if (operator == '-') {
+      result = parseFloat(leftNumber) - parseFloat(rightNumber)
+    } else if (operator == '*') {
+      result = parseFloat(leftNumber) * parseFloat(rightNumber)
+    } else if (operator == '/') {
+      if (parseFloat(rightNumber) == 0) result = "It's over 9000!"
+      else result = parseFloat(leftNumber) / parseFloat(rightNumber)
+    } else if (operator == '%') {
+      if (parseFloat(rightNumber) == 0) result = "It's over 9000!"
+      else result = parseFloat(leftNumber) % parseFloat(rightNumber)
+    }
+
+    alert(result)
+    console.log(result)
+  }
+</script>
+
+</html>
