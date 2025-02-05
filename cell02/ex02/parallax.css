@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 69px;
+  font-weight: bold;
+  color: white;
+}
+
+p {
+  width: 70%;
+}
+
+.box {
+  height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 32px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cat {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/Felis_catus-cat_on_snow.jpg");
+}
+
+#dog {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Huskiesatrest.jpg/1920px-Huskiesatrest.jpg");
+}
