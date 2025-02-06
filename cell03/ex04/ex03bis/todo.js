@@ -26,13 +26,6 @@ $(function() {
     }
 
   })
-
-  $('.todo-item').click(function()  {
-    if (confirm('Do you want to delete this?')) {
-      $(this).remove()
-      console.log(saveTodoList())
-    }
-  })
 })
 
 function createNewDiv({ id, title }) {
@@ -40,6 +33,12 @@ function createNewDiv({ id, title }) {
     .text(title)
     .addClass('todo-item')
     .attr('id', id)
+    .click(function () {
+      if (confirm('Do you want to delete this?')) {
+        $(this).remove()
+        console.log(saveTodoList())
+      }
+    })
 
   return newDiv
 }
