@@ -12,7 +12,27 @@ $(function() {
     })
   }
 
-  $('.new-button').on('click', createNewTodo)
+  $('.new-button').click(function() {
+    const td = prompt('New todo name')
+
+    if (td) {
+      const newId = new Date().getTime()
+      const newDiv = createNewDiv({ id: newId, title: td })
+
+      const ftList = $('#ft-list')
+      ftList.prepend(newDiv)
+
+      console.log(saveTodoList())
+    }
+
+  })
+
+  $('.todo-item').click(function()  {
+    if (confirm('Do you want to delete this?')) {
+      $(this).remove()
+      console.log(saveTodoList())
+    }
+  })
 })
 
 function createNewDiv({ id, title }) {
@@ -20,35 +40,8 @@ function createNewDiv({ id, title }) {
     .text(title)
     .addClass('todo-item')
     .attr('id', id)
-    .click(function() {
-      deleteTodo(id)
-    })
 
   return newDiv
-}
-
-function createNewTodo() {
-  const td = prompt('New todo name')
-
-  if (td) {
-    const newId = new Date().getTime()
-    const newDiv = createNewDiv({ id: newId, title: td })
-
-    const ftList = $('#ft-list')
-    ftList.prepend(newDiv)
-  }
-
-  console.log(saveTodoList())
-}
-
-function deleteTodo(id) {
-  const todo = $('#' + id)
-
-  if (todo && confirm('Do you want to delete this?')) {
-    todo.remove()
-  }
-
-  console.log(saveTodoList())
 }
 
 function saveTodoList() {

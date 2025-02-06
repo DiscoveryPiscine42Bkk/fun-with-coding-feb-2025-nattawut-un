@@ -31,7 +31,7 @@
   $(function() {
     var balloon = $('.balloon')
 
-    balloon.on('click', function() {
+    balloon.click(function() {
       var currentSize = parseInt(balloon.css('width').replace('px', ''))
       if (currentSize + 10 > 420) {
         balloon.css({ width: '200px', height: '200px' })
