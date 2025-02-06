@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do or not to do</title>
+  <script src="todo.js"></script>
+</head>
+
+<body>
+  <div class="todo-list" id="ft_list">
+    <!-- todo here -->
+  </div><br>
+  <button class="new-button" onclick="createNewTodo()">New</button>
+</body>
+
+<style>
+  * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+  }
+
+  .todo-list {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .todo-item {
+    background-color: aliceblue;
+    border: 2px solid skyblue;
+    color: rgb(0, 99, 138);
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  .new-button {
+    background-color: skyblue;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+  }
+</style>
+
+</html>
