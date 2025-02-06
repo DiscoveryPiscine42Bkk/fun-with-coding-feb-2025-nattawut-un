@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>[jQuery] It's over 9000</title>
+</head>
+
+<style>
+  * {
+    font-size: xx-large;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<body>
+  <div style="margin: 32px;">
+    <div>
+
+      <input type="text" name="left-number" id="left-number">
+
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+
+      <input type="text" name="right-number" id="right-number">
+
+      <input type="submit" value="Try me!">
+
+    </div>
+  </div>
+</body>
+
+<script>
+  $(function () {
+    setInterval(function() {
+      alert('Please, use me...');
+    }, 30000);
+
+    $('input:submit').on('click', function() {
+      const leftNumber = $('#left-number').val()
+      const operator = $('#operator').val()
+      const rightNumber = $('#right-number').val()
+
+      var result
+      if (
+        leftNumber < 0 || rightNumber < 0 ||
+        !/^\d+$/.test(leftNumber) || !/^\d+$/.test(rightNumber)
+      ) {
+        result = 'Error :('
+      } else if (operator == '+') {
+        result = parseFloat(leftNumber) + parseFloat(rightNumber)
+      } else if (operator == '-') {
+        result = parseFloat(leftNumber) - parseFloat(rightNumber)
+      } else if (operator == '*') {
+        result = parseFloat(leftNumber) * parseFloat(rightNumber)
+      } else if (operator == '/') {
+        if (parseFloat(rightNumber) == 0) result = "It's over 9000!"
+        else result = parseFloat(leftNumber) / parseFloat(rightNumber)
+      } else if (operator == '%') {
+        if (parseFloat(rightNumber) == 0) result = "It's over 9000!"
+        else result = parseFloat(leftNumber) % parseFloat(rightNumber)
+      }
+
+      alert(result)
+      console.log(result)
+    })
+  })
+</script>
+
+</html>

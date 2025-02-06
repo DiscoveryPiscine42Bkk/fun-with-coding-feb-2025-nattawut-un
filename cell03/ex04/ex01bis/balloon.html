@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>[jQuery] Explode this balloon</title>
+</head>
+
+<body>
+  <div class="balloon"></div>
+</body>
+
+<style>
+  .balloon {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: red;
+  }
+</style>
+
+<script>
+  const c = {
+    red: 'rgb(255, 0, 0)',
+    green: 'rgb(0, 255, 0)',
+    blue: 'rgb(0, 0, 255)'
+  }
+
+  $(function() {
+    var balloon = $('.balloon')
+
+    balloon.on('click', function() {
+      var currentSize = parseInt(balloon.css('width').replace('px', ''))
+      if (currentSize + 10 > 420) {
+        balloon.css({ width: '200px', height: '200px' })
+      } else {
+        balloon.css({ width: (currentSize + 10) + 'px', height: (currentSize + 10) + 'px' })
+      }
+
+      var currentColor = balloon.css('background-color')
+      if (currentColor == c.red) balloon.css('background-color', c.green)
+      if (currentColor == c.green) balloon.css('background-color', c.blue)
+      if (currentColor == c.blue) balloon.css('background-color', c.red)
+
+      debugBalloon()
+    })
+
+    balloon.on('mouseleave', function() {
+      var currentSize = parseInt(balloon.css('width').replace('px', ''))
+      if (currentSize - 5 >= 200) {
+        balloon.css({ width: (currentSize - 5) + 'px', height: (currentSize - 5) + 'px' })
+      }
+
+      var currentColor = balloon.css('background-color')
+      if (currentColor == c.red) balloon.css('background-color', c.blue)
+      if (currentColor == c.blue) balloon.css('background-color', c.green)
+      if (currentColor == c.green) balloon.css('background-color', c.red)
+
+      debugBalloon()
+    })
+
+    function debugBalloon() {
+      console.log(balloon.css('width') + '\n' + balloon.css('background-color'))
+    }
+  })
+</script>
+
+</html>
+
