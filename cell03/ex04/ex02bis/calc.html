@@ -58,17 +58,17 @@
       ) {
         result = 'Error :('
       } else if (operator == '+') {
-        result = parseFloat(leftNumber) + parseFloat(rightNumber)
+        result = parseInt(leftNumber) + parseInt(rightNumber)
       } else if (operator == '-') {
-        result = parseFloat(leftNumber) - parseFloat(rightNumber)
+        result = parseInt(leftNumber) - parseInt(rightNumber)
       } else if (operator == '*') {
-        result = parseFloat(leftNumber) * parseFloat(rightNumber)
+        result = parseInt(leftNumber) * parseInt(rightNumber)
       } else if (operator == '/') {
-        if (parseFloat(rightNumber) == 0) result = "It's over 9000!"
-        else result = parseFloat(leftNumber) / parseFloat(rightNumber)
+        if (parseInt(rightNumber) == 0) result = "It's over 9000!"
+        else result = parseInt(leftNumber) / parseInt(rightNumber)
       } else if (operator == '%') {
-        if (parseFloat(rightNumber) == 0) result = "It's over 9000!"
-        else result = parseFloat(leftNumber) % parseFloat(rightNumber)
+        if (parseInt(rightNumber) == 0) result = "It's over 9000!"
+        else result = parseInt(leftNumber) % parseInt(rightNumber)
       }
 
       alert(result)
