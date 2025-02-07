@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Itim", serif;
+}
+
+.section {
+  scroll-margin-top: 80px;
+}
+
+main, nav div {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+nav {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .4) 0%, rgba(0, 0, 0, .2) 100%);
+}
+
+.bg {
+  background-image: url('./web-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -42;
+  opacity: .5;
+}

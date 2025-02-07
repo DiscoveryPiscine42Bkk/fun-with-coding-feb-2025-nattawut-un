@@ -7,23 +7,8 @@
     <title>Portfolio Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
-
-<style>
-    .bg {
-        background-image: url('./web-bg.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -42;
-        opacity: .5;
-    }
-</style>
 
 <body>
     <div class="bg"></div>
@@ -34,7 +19,7 @@
             <p class="text-gray-600 mt-2">Select the profile</p>
         </div>
 
-        <div class="my-4 space-x-4 flex mx-auto">
+        <div class="my-4 space-x-4 md:flex mx-auto">
             <a href="nunwiset/index.html" class="space-y-4 group">
                 <img src="./nunwiset/me.jpg" class="w-48 h-48 object-cover rounded-full shadow-xl transition group-active:opacity-75">
                 <div class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-bold group-hover:bg-blue-700 transition border-4 border-blue-900 border-opacity-0 group-hover:border-opacity-75 group-active:opacity-75 shadow-xl">nunwiset</div>
