@@ -36,7 +36,7 @@ function createNewTodo() {
     ftList.insertBefore(newDiv, ftList.firstChild)
   }
 
-  console.log(saveTodoList())
+  saveTodoList()
 }
 
 function deleteTodo(id) {
@@ -46,7 +46,7 @@ function deleteTodo(id) {
     todo.remove()
   }
 
-  console.log(saveTodoList())
+  saveTodoList()
 }
 
 function saveTodoList() {

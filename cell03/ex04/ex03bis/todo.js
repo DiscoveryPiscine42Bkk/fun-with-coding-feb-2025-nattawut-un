@@ -22,7 +22,7 @@ $(function() {
       const ftList = $('#ft-list')
       ftList.prepend(newDiv)
 
-      console.log(saveTodoList())
+      saveTodoList()
     }
 
   })
@@ -36,7 +36,7 @@ function createNewDiv({ id, title }) {
     .click(function () {
       if (confirm('Do you want to delete this?')) {
         $(this).remove()
-        console.log(saveTodoList())
+        saveTodoList()
       }
     })
 

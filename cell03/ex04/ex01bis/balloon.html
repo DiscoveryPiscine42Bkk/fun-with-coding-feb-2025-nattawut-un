@@ -43,8 +43,6 @@
       if (currentColor == c.red) balloon.css('background-color', c.green)
       if (currentColor == c.green) balloon.css('background-color', c.blue)
       if (currentColor == c.blue) balloon.css('background-color', c.red)
-
-      debugBalloon()
     })
 
     balloon.on('mouseleave', function() {
@@ -57,13 +55,7 @@
       if (currentColor == c.red) balloon.css('background-color', c.blue)
       if (currentColor == c.blue) balloon.css('background-color', c.green)
       if (currentColor == c.green) balloon.css('background-color', c.red)
-
-      debugBalloon()
     })
-
-    function debugBalloon() {
-      console.log(balloon.css('width') + '\n' + balloon.css('background-color'))
-    }
   })
 </script>
 

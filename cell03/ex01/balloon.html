@@ -40,8 +40,6 @@
     if (currentColor == 'red') balloon.style['background-color'] = 'green'
     if (currentColor == 'green') balloon.style['background-color'] = 'blue'
     if (currentColor == 'blue') balloon.style['background-color'] = 'red'
-
-    debugBalloon()
   })
 
   balloon.addEventListener("mouseleave", () => {
@@ -55,13 +53,7 @@
     if (currentColor == 'red') balloon.style['background-color'] = 'blue'
     if (currentColor == 'blue') balloon.style['background-color'] = 'green'
     if (currentColor == 'green') balloon.style['background-color'] = 'red'
-
-    debugBalloon()
   })
-
-  function debugBalloon() {
-    console.log(balloon.style.width + '\n' + balloon.style['background-color'])
-  }
 </script>
 
 </html>
